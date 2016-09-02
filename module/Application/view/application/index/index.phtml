@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row banner-home">
+    <div class="col-md-3">
+      <img src="https://c2.staticflickr.com/6/5105/5626762538_406270541c_b.jpg">
+    </div>
+    <div class="col-md-9">
+      <h1>To Do List. Ciò che dobbiamo fare.</h1>
+    </div>
+  </div>
+  <div class="row">
+
+      <?php foreach($this->listaTodos as $todo) {
+          echo $this->partial('partials/todo.phtml', ['todo' => $todo]);
+      } ?>
+
+  </div>
+</div>

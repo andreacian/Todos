@@ -1,0 +1,7 @@
+<div class="container-fluid">
+
+    <?php foreach($this->lista as $todo) {
+        echo $this->partial('partials/todo.phtml', ['todo' => $todo]);
+    } ?>
+
+</div>
