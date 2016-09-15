@@ -54,7 +54,7 @@ class TodosService {
             $dati['telefono'],
             $dati['priorita'],
             $dati['referente'],
-            $dati['note'],
+            $dati['note']
 
           //  $this->entityManager->getReference('\Prodotti\Entity\Categoria', $dati['categoria'])
         );
