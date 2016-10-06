@@ -10,8 +10,10 @@ class IndexControllerFactory implements FactoryInterface
     {
 
         $todosService = $serviceLocator->getServiceLocator()->get('Todos\Service\TodosService');
+        $todoForm = $serviceLocator->getServiceLocator()->get('Todos\Form\TodoForm');
 
-        return new IndexController($todosService);
+
+        return new IndexController($todosService, $todoForm);
 
     }
 

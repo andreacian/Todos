@@ -1,37 +1,303 @@
+/*
+*********************************************************
+*		Colors
+*		Danger(red): 	#d9534f
+*		Success(green): 	#5cb85c
+*		Info(light-blue):			#5bc0de
+*		Warning(orange):	#F89406
+*		Default(blue):	#428bca
+*		White: #fff
+*		Avignon: #1492CC
+*		Medium Gray: #555454
+*		Dark Gray: #3C3C3C
+*		Rubber: #262626
+*		Moderate Importance: #F5AE45
+*
+*
+*		Icons
+*		<i class="fa fa-trash" aria-hidden="true"></i>
+*		<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+*		<i class="fa fa-plus" aria-hidden="true"></i>
+*
+*********************************************************
+*/
+
+
+
+
+/*-------------------------------------------------------
+*			Base
+-------------------------------------------------------*/
+
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+   background: #F5F5F5 url(../img/sfondoToDo.jpg) no-repeat center center fixed;
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+  -o-background-size: cover;
+    background-size: cover;
 }
 
-.zf-green {
-    color: #68b604;
+.container {
+    margin: 100px auto;
+    width: 80%;
+    border: 5px outset #f1f1f1;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 2em 2em 8em #333;
+
 }
 
-.btn-success {
-  background-color: #57a900;
-  background-image: -moz-linear-gradient(top, #70d900, #57a900);
-  background-image: -ms-linear-gradient(top, #70d900, #57a900);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-  background-image: -o-linear-gradient(top, #70d900, #57a900);
-  background-image: linear-gradient(top, #70d900, #57a900);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+img{
+    display: block;
+    margin: 0 auto;
 }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-  background-color: #57a900;
+p {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #fff;
 }
 
-.btn-success:active, .btn-success.active {
-  background-color: #57a900;
+ol {}
+
+li {
+	list-style: none;
 }
 
-div.container a.brand {
-    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
-    margin-left: 0;
-    padding: 8px 20px 12px 40px;
+a {}
+
+.btn {
+    margin-bottom: 0.4em;
+	min-width: 9em;
+    }
+
+
+.list-group a {
+	color: #fff;
+}
+
+
+h1.text-center, h3.text-center {
+    text-shadow: 1px 1px 5px #ccc;
+}
+
+
+
+table {
+	background: #f5f5f5;
+	border-collapse: separate;
+	box-shadow: inset 0 0.5em 0 #fff;
+	font-size: 0.8em;
+    font-weight:normal;
+	line-height: 2em;
+    margin: 0.5em auto;
+	width: 95%;
+}	
+
+th {
+	background: rgb(125,185,232); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(125,185,232,1) 0%, rgba(32,124,202,1) 48%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(125,185,232,1) 0%,rgba(32,124,202,1) 48%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(125,185,232,1) 0%,rgba(32,124,202,1) 48%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+	border-left: 0.1em solid #1f3d74;
+	border-right: 0.15em solid #408BEA;
+	border-top: 0.2em solid #4994c6;
+	border-bottom: 0.2em solid #114171;
+	color: #fff;
+	position: relative;
+    text-align: center;
+    line-height: 3em;
+    text-transform:uppercase;
+	text-shadow: 0 0.2em 0.3em #000;
+    width: 21%;
+    
+}
+
+th:first-child {
+	border-left: 0.1em solid #1f3d74;	
+}
+
+th:last-child {
+	box-shadow: 0.1em solid #1f3d74;
+    width: 13%
+}
+
+td {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 5px 5px;
+	position: relative;
+	transition: all 300ms;
+}
+
+td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+tr {
+	background: url(http://jackrugile.com/images/misc/noise-diagonal.png);	
+}
+
+tr:nth-child(odd) td {
+	background: #f1f1f1 url(http://jackrugile.com/images/misc/noise-diagonal.png);	
+}
+
+tr:last-of-type td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+tr:last-of-type td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+tr:last-of-type td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+tbody:hover td {
+	color: transparent;
+	text-shadow: 0 0 3px #aaa;
+}
+
+tbody:hover tr:hover td {
+	color: #444;
+	text-shadow: 0 1px 0 #fff;
+}
+
+/*-------------------------------------------------------
+*			List-Themes
+-------------------------------------------------------*/
+
+
+/*Default*/
+
+.list-item-default {
+	background-color: #428bca;
+}
+
+.list-group .list-item-default:hover,
+.list-group .list-item-default:focus {
+	background-color: #428bca;
+	opacity: 0.9;
+	color: #fff;
+}
+
+
+/*Important*/
+
+.list-item-important {
+	background-color: #d9534f;
+}
+
+.list-group .list-item-important:hover,
+.list-group .list-item-important:focus {
+	background-color: #d9534f;
+	opacity: 0.9;
+	color: #fff;
+}
+
+
+/*Moderately Important*/
+
+.list-item-warning {
+	background-color: #F5AE45;
+}
+
+.list-group .list-item-warning:hover,
+.list-group .list-item-warning:focus {
+	background-color: #F5AE45;
+	color: #fff;
+	opacity: 0.9;
+}
+
+
+/*Default*/
+
+.list-item-primary {
+	background-color: #428bca;
+}
+
+.list-group .list-item-primary:hover,
+.list-group .list-item-primary:focus {
+	background-color: #428bca;
+	color: #fff;
+	opacity: 0.9;
+}
+
+
+/*Complete*/
+
+.list-item-complete {
+	background-color: #5cb85c;
+	opacity: 0.5;
+}
+
+.list-group .list-item-complete:hover,
+.list-group .list-item-complete:focus {
+	background-color: #5cb85c;
+	color: #fff;
+	opacity: 0.8;
+}
+
+
+/*Info not used info color used for selection
+.list-item-info {
+	background-color: #5bc0de;
+}
+
+.list-group .list-item-info:hover {
+	background-color: #5bc0de;
+	opacity: 0.9;
+}
+*/
+
+
+/*Selected*/
+
+.list-item-selected {
+	background-color: #5bc0de;
+}
+
+.list-group .list-item-selected:hover,
+.list-group .list-item-selected:focus {
+	background-color: #5bc0de;
+	color: #fff;
+	opacity: 0.9;
+}
+
+
+/*-------------------------------------------------------
+*			Button-Themes
+-------------------------------------------------------*/
+
+
+/*
+##########################################################
+		Media Query
+##########################################################
+*/
+
+@media all and (max-width: 768px) {
+	.btn {
+		margin-bottom: 0.2em;
+		min-width: 0em;
+		max-width: 0.5em;
+		color: rgba(0,0,0,0)
+	}
+	.btn i {
+		color: rgba(255,255,255,1)
+	}
 }

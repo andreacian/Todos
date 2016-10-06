@@ -21,9 +21,10 @@ class TodosService {
     }
 
 */
-    public function getTodo($cliente) {
-        return $this->todosRepository->findOneByCliente($cliente);
+    public function getTodoId($id) {
+        return $this->todosRepository->find($id);
     }
+
 
     public function getListaTodos() {
         return $this->todosRepository->findAll();

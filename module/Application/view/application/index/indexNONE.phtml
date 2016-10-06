@@ -1,0 +1,75 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+              <img src="img/LaTipografica_logo.png" alt="LTP" class="text-center">
+      <h1 class="text-center">TO DO LIST</h1>
+              <hr>
+    </div>
+  </div>
+
+  <div id="listMain"> <!-- Start List Main -->
+
+    <div class="row">
+      <div class="col-xs-12">
+<table>
+<thead>
+  <tr>
+    <th>Cliente</th>
+    <th>Lavoro</th>
+    <th>Consegna</th>
+    <th>Priorità</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+
+<?php foreach($this->listaTodos as $todo) {
+  echo $this->partial('partials/todo.phtml', ['todo' => $todo]);
+} ?>
+
+</tbody>
+
+</table>
+
+        </div>
+      </div>
+
+  </div> <!-- End List Main -->
+  <hr>
+
+  </div>
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row banner-home">
+    <div class="col-md-9">
+      <img src="">
+    </div>
+    <div class="col-md-9">
+      <h1>To Do List. Ciò che dobbiamo fare.</h1>
+    </div>
+  </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Lavoro</th>
+                <th>Data Consegna</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+      <?php foreach($this->listaTodos as $todo) {
+          echo $this->partial('partials/todo.phtml', ['todo' => $todo]);
+      } ?>
+
+        </tbody>
+    </table>
+</div>

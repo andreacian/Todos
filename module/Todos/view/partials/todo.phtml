@@ -1,11 +1,8 @@
-<div class="col-md-3">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        <?=$todo->getCliente() ?>
-        <a href="<?= $this->url('todos/default', ['cliente' => $todo->getCliente()]) ?>"><?=$todo->getCliente() ?></a>
-    </div>
-    <div class="panel-body">
-      <img src="" />
-    </div>
-  </div>
-</div>
+<tr>
+  <td>
+    <a href="<?= $this->url('todos/default', ['id' => $todo->getId()]) ?>"><?=$todo->getCliente() ?></a>
+  </td>
+  <td><?=$todo->getLavoro()?></td>
+  <td><?=date_format($todo->getDataconsegna(), 'd-m-Y')?></td>
+  <td><?=$todo->getPriorita()?></td>
+</tr>

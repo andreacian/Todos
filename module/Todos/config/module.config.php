@@ -19,15 +19,52 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/:cliente',
+                            'route'    => '/:id',
                             'constraints' => array(
-                                'cliente' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[0-9]*',
                             ),
                             'defaults' => array(
                                 'action' => 'todo',
                             ),
                         ),
                     ),
+
+                    'elimina' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/elimina/:id',
+                            'constraints' => array(
+                                'id' => '[0-9]*',
+                            ),
+                            'defaults' => array(
+                                'action' => 'elimina',
+                            ),
+                        ),
+                    ),
+
+                    'nuovo' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/nuovo',
+                            'defaults' => array(
+                                'action' => 'nuovo',
+                            ),
+                        ),
+                    ),
+
+                    'modifica' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/modifica/:id',
+                            'constraints' => array(
+                                'id' => '[0-9]*',
+                            ),
+                            'defaults' => array(
+                                'action' => 'modifica',
+                            ),
+                        ),
+                    ),
+
                 ),
             ),
 
@@ -82,7 +119,7 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'Todos\Service\TodosService' => Service\TodosServiceFactory::class,
-          //  'Prodotti\Form\ProdottoForm' => Form\ProdottoFormFactory::class,
+            'Todos\Form\TodoForm' => Form\TodoFormFactory::class,
         ),
     ),
     'view_manager' => array(
