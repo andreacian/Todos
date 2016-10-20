@@ -3,6 +3,7 @@
 namespace Todos\Form;
 
 use Zend\Form\Form;
+use Todos\Entity\Todo;
 
 class TodoForm extends Form
 {
@@ -150,8 +151,20 @@ class TodoForm extends Form
                 'class'    => 'form-control'
             ]
         ]);
-
-
     }
+
+    public function setDatiTodo(Todo $todo)
+      {
+          $this->get('datacreazione')->setValue($todo->getDatacreazione());
+          $this->get('cliente')->setValue($todo->getCliente());
+          $this->get('lavoro')->setValue($todo->getLavoro());
+          $this->get('dataconsegna')->setValue($todo->getDataconsegna());
+          $this->get('mail')->setValue($todo->getMail());
+          $this->get('telefono')->setValue($todo->getTelefono());
+          $this->get('priorita')->setValue($todo->getPriorita());
+          $this->get('referente')->setValue($todo->getReferente());
+          $this->get('note')->setValue($todo->getNote());
+
+      }
 
 }

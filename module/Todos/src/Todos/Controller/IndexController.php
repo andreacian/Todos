@@ -79,28 +79,38 @@ class IndexController extends AbstractActionController
   public function modificaAction()
   {
     $todo = $this->todosService->getTodoId($this->params()->fromRoute('id'));
-    $this->form->bind($todo); 
 
-        if ($this->getRequest()->isPost()) {
-            $request = $this->getRequest();
+  $this->form->setDatiTodo($todo);
 
-            // merge dati che arrivano dalla form
-            $postData = array_merge_recursive(
-                $request->getPost()->toArray()
-              //  $request->getFiles()->toArray()
-            );
+  if ($this->getRequest()->isPost()) {
+      $request = $this->getRequest();
 
-            $this->form->setData($postData);
-            $todo = $this->todosService->creaNuovoTodo($postData);
-            $this->redirect()->toRoute('todos');
+      // merge dati che arrivano dalla form
+      $postData = array_merge_recursive(
+          $request->getPost()->toArray()
+        //  $request->getFiles()->toArray()
+      );
 
-          }
+      $this->form->setData($postData);
 
-          return new ViewModel([
-              'form' => $this->form,
-              'lista' => $this->todosService->getListaTodos()
+      if ($this->form->isValid()) {
 
-          ]);
+          $this->todosService->aggiornaTodo($todo, $postData);
+
+          // salvataggio del file nella posizione finale
+      /*    if (!empty($postData['immagine'])) {
+              move_uploaded_file($postData['immagine']['tmp_name'], __DIR__ . '/../../../../../public/prodotti/' . $prodotto->getCodice() . '.jpg');
+          } */
+
+          $this->redirect()->toRoute('todos');
+
+      }
+  }
+
+  return new ViewModel([
+      'form' => $this->form
+  ]);
+
     }
 
 

@@ -30,20 +30,6 @@ class TodosService {
         return $this->todosRepository->findAll();
     }
 
-  /*
-  public function getListaCategorie() {
-        return $this->categorieRepository->findAll();
-    }
-
-    public function getArrayCategorie() {
-        $categorie = [];
-        foreach($this->getListaCategorie() as $categoria) {
-            $categorie[$categoria->getId()] = $categoria->getNome();
-        }
-
-        return $categorie;
-    }
-    */
 
     public function creaNuovoTodo(array $dati) {
         $todo = new Todo(
@@ -65,6 +51,23 @@ class TodosService {
 
         return $todo;
     }
+
+
+    public function aggiornaTodo(Todo $todo, array $dati) {
+          $todo->setDatacreazione($dati['datacreazione']);
+          $todo->setCliente($dati['cliente']);
+          $todo->setLavoro($dati['lavoro']);
+          $todo->setDataconsegna($dati['dataconsegna']);
+          $todo->setMail($dati['mail']);
+          $todo->setTelefono($dati['telefono']);
+          $todo->setPriorita($dati['priorita']);
+          $todo->setReferente($dati['referente']);
+          $todo->setNote($dati['note']);
+
+          $this->entityManager->persist($todo);
+          $this->entityManager->flush();
+      }
+
 
     public function elimina(Todo $todo) {
         $this->entityManager->remove($todo);

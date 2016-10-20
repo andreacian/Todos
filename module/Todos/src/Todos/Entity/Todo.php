@@ -100,6 +100,22 @@ class Todo
 
         }
 
+        public function toArray()
+  {
+      return [
+          'datacreazione' => $this->datacreazione,
+          'cliente' => $this->cliente,
+          'lavoro' => $this->lavoro,
+          'dataconsegna' => $this->dataconsegna,
+          'mail' => $this->mail,
+          'telefono' => $this->telefono,
+          'priorita' => $this->priorita,
+          'referente' => $this->referente,
+          'note' => $this->note,
+
+      ];
+  }
+
     /**
      * Get id
      *

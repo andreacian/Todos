@@ -22,9 +22,10 @@
         </thead>
         <tbody>
 
-      <?php foreach($this->lista as $todo) {
-          echo $this->partial('partials/todoList.phtml', ['todo' => $todo]);
-      } ?>
+      <?php
+        foreach($this->lista as $todo) {
+            echo $this->partial('partials/todoList.phtml', ['todo' => $todo]);
+        } ?>
 
         </tbody>
     </table>
