@@ -1,21 +1,190 @@
-<h2>Modifica ToDo</h2>
+<div class="containernew">
+      <!--start container-->
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+              <img src="img/LaTipografica_logo.png" alt="LTP" class="text-center">
+      <h1 class="text-center">TO DO LIST</h1>
+              <hr>
 
 <?php
 $this->form->prepare();
+
+// Get the form label plugin
+$formLabel = $this->plugin('formLabel');
+
 echo $this->form()->openTag($form);
 ?>
 
-    <?php foreach($this->form->getElements() as $element) { ?>
-    <div class="form-group">
-        <?php
-            echo $this->formLabel($element);
-            echo $this->formElement($element);
-            echo $this->formElementErrors($element);
-         ?>
-    </div>
-    <?php } ?>
+
+<form class="form-horizontal" action=" " method="post"  id="contact_form">
+
+<!-- Time-->
+
+<div class="form-group">
+  <?php
+      $datacreazione = $form->get('datacreazione');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Data di arrivo</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <?php echo $this->formInput($datacreazione) . $this->formElementErrors($datacreazione) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+    <!-- Text input-->
+
+<div class="form-group">
+  <?php
+      $cliente = $form->get('cliente');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Azienda</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+    <?php echo $this->formInput($cliente) . $this->formElementErrors($cliente) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <?php
+      $lavoro = $form->get('lavoro');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Lavoro</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<?php echo $this->formInput($lavoro) . $this->formElementErrors($lavoro) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+    <!-- Time-->
+
+<div class="form-group">
+  <?php
+      $dataconsegna = $form->get('dataconsegna');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Data di Consegna</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <?php echo $this->formInput($dataconsegna) . $this->formElementErrors($dataconsegna) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
 
 
-    <button type="submit" class="btn btn-default">Salva dati</button>
+
+
+<!-- Text input-->
+   <div class="form-group">
+     <?php
+       $mail = $form->get('mail');
+       echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">E-Mail</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <?php echo $this->formInput($mail) . $this->formElementErrors($mail) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <?php
+    $referente = $form->get('referente');
+    echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label" >Referente</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<?php echo $this->formInput($referente) . $this->formElementErrors($referente) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+ <!-- Text input-->
+
+
+<div class="form-group">
+  <?php
+    $telefono = $form->get('telefono');
+    echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Telefono</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+    <?php echo $this->formInput($telefono) . $this->formElementErrors($telefono) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <?php
+      $priorita = $form->get('priorita');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Priorità</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-bell"></i></span>
+              <?php echo $this->formInput($priorita) . $this->formElementErrors($priorita) . $formLabel->closeTag(); ?>
+
+</div>
+</div>
+</div>
+
+
+
+<!-- Text area -->
+
+<div class="form-group">
+  <?php
+      $note = $form->get('note');
+      echo $formLabel->openTag() ?>
+<label class="col-md-3 control-label">Note Lavoro</label>
+<div class="col-md-8 inputGroupContainer">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <?php echo $this->formInput($note) . $this->formElementErrors($note) . $formLabel->closeTag(); ?>
+</div>
+</div>
+</div>
+<hr>
+
+
+
+<!-- Button -->
+<div class="form-group">
+<label class="col-md-4 control-label"></label>
+<div class="col-md-4">
+<button type="submit" class="btn btn-warning" >SALVA <span class="glyphicon glyphicon-send"></span></button>
+</div>
+</div>
+</form>
+
+
+
+
+
 
 <?=$this->form()->closeTag($form);?>
+
+
+</div>
+
+</div> <!-- End List Main -->
+
+</div>
+<!--end container-->

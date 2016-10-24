@@ -40,36 +40,3 @@
   <hr>
 
   </div>
-
-
-
-
-
-
-<div class="container-fluid">
-  <div class="row banner-home">
-    <div class="col-md-9">
-      <img src="">
-    </div>
-    <div class="col-md-9">
-      <h1>To Do List. Ciò che dobbiamo fare.</h1>
-    </div>
-  </div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Cliente</th>
-                <th>Lavoro</th>
-                <th>Data Consegna</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-
-      <?php foreach($this->listaTodos as $todo) {
-          echo $this->partial('partials/todo.phtml', ['todo' => $todo]);
-      } ?>
-
-        </tbody>
-    </table>
-</div>

@@ -10,4 +10,8 @@ namespace Todos\Entity\Repository;
  */
 class TodosRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function findAll()
+    {
+        return $this->findBy(array(), array('priorita' => 'ASC'));
+    }
 }
