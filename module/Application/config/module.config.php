@@ -63,7 +63,8 @@ return array(
           ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+//        'locale' => 'en_US',
+        'locale' => 'it_IT',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',

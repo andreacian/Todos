@@ -1,32 +1,14 @@
-<div class="container-fluid">
-  <div class="row banner-home">
-    <div class="col-md-9">
-      <h1>To Do List. Ciò che dobbiamo fare.</h1>
-    </div>
-  </div>
-  <a class="btn btn-primary" href="<?=$this->url('todos/nuovo')?>" role="button">Nuovo ToDo</a>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Data Creazione</th>
-                <th>Cliente</th>
-                <th>Lavoro</th>
-                <th>Data Consegna</th>
-                <th>Mail</th>
-                <th>Telefono</th>
-                <th>Priorità</th>
-                <th>Referente</th>
-                <th>Note</th>
-            </tr>
-        </thead>
-        <tbody>
-
       <?php
         foreach($this->lista as $todo) {
             echo $this->partial('partials/todoList.phtml', ['todo' => $todo]);
         } ?>
 
-        </tbody>
-    </table>
-</div>
+                <div class="tasti">
+        			<div class="row">
+                        <div class="col-xs-2 pull-right">
+                               <button alt="Nuovo"><span class="glyphicon glyphicon-list-alt"></span></button>
+                            <button alt="OK, ritorna"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+        				</div>
+                    </div>
+                    <hr>
+                 </div>

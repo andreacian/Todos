@@ -1,17 +1,58 @@
-        <tr>
-            <td><?=date_format($todo->getDatacreazione(), 'd-m-Y')?></td>
-            <th scope="row">
-              <a href="<?= $this->url('todos/default', ['id' => $todo->getId()]) ?>"><?=$todo->getCliente() ?></a>
-            </th>
-            <td><?=$todo->getLavoro()?></td>
-            <td><?=date_format($todo->getDataconsegna(), 'd-m-Y')?></td>
-            <td><?=$todo->getMail()?></td>
-            <td><?=$todo->getTelefono()?></td>
-            <td><?=$todo->getPriorita()?></td>
-            <td><?=$todo->getReferente()?></td>
-            <td><?=$todo->getNote()?></td>
-            <td>
-                <a class="btn btn-default" href="<?=$this->url('todos/modifica', ['id' => $todo->getId()])?>" role="button">Modifica</a>
-                <a class="btn btn-default" href="<?=$this->url('todos/elimina', ['id' => $todo->getId()])?>" role="button">Elimina</a>
-            </td>
-        </tr>
+<div id="listMain" class="col-xs-12"> <!-- Start List Main -->
+			<div class="row">
+				<div class="col-xs-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="schedalav">Cliente</th>
+                                <th class="schedalav">Lavoro</th>
+                                <th class="schedalav">Data di Arrivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?=$todo->getCliente()?></td>
+                                <td><?=$todo->getLavoro()?></td>
+                                <td><?=date_format($todo->getDatacreazione(), 'd-m-Y')?></td>
+                            </tr>
+
+                             <thead>
+                            <tr>
+                                <th class="schedalav">E-Mail</th>
+                                <th class="schedalav">Telefono</th>
+                                <th class="schedalav">Consegna</th>
+</tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?=$todo->getMail()?></td>
+                                <td><?=$todo->getTelefono()?></td>
+                                <td><?=date_format($todo->getOraconsegna(), 'h:m')?></td>
+                            </tr>
+                        </tbody>
+                             <thead>
+                            <tr>
+                                <th class="schedalav">Referente</th>
+                                <th colspan="2" class="schedalav">Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?=$todo->getReferente()?></td>
+                                <td colspan="2"><?=$todo->getReferente()?></td>
+                            </tr>
+                    </table>
+				</div>
+            </div>
+		</div>
+
+		<div class="tasti">
+			<div class="row">
+                <div class="col-xs-3">
+					  <button alt="Modifica" ><span class="glyphicon glyphicon-edit" href="<?=$this->url('todos/modifica', ['id' => $todo->getId()])?>" ></span></button>
+                      <button alt="Elimina"><span class="glyphicon glyphicon-remove" href="<?=$this->url('todos/elimina', ['id' => $todo->getId()])?>"> </span></button>
+				</div>
+            </div>
+                     <hr class="divisor">
+         </div>
+            <!-- End List Main -->

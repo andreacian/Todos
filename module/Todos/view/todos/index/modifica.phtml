@@ -1,190 +1,106 @@
-<div class="containernew">
-      <!--start container-->
-  <div class="row">
-    <div class="col-xs-12">
-      <hr>
-              <img src="img/LaTipografica_logo.png" alt="LTP" class="text-center">
-      <h1 class="text-center">TO DO LIST</h1>
-              <hr>
+<div id="listMain" class="col-xs-12"> <!-- Start List Main -->
 
-<?php
-$this->form->prepare();
+	<?php
+	$this->form->prepare();
 
-// Get the form label plugin
-$formLabel = $this->plugin('formLabel');
+	// Get the form label plugin
+	$formLabel = $this->plugin('formLabel');
 
-echo $this->form()->openTag($form);
-?>
+	echo $this->form()->openTag($form);
+	?>
 
+			<div class="row">
+				<div class="col-xs-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="schedalav">Cliente</th>
+                                <th class="schedalav">Lavoro</th>
+                                <th class="schedalav">Data di Arrivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+																	 <?php
+																      $cliente = $form->get('cliente');
+																      echo $formLabel->openTag();
+																			echo $this->formInput($cliente) . $this->formElementErrors($cliente) . $formLabel->closeTag(); ?>
+																</td>
+                                <td>
+																	<td>
+																		 <?php
+																				$lavoro = $form->get('lavoro');
+																				echo $formLabel->openTag();
+																				echo $this->formInput($lavoro) . $this->formElementErrors($lavoro) . $formLabel->closeTag(); ?>
+																</td>
+                                <td>
+																	<?php
+																		 $datacreazione = $form->get('datacreazione');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($datacreazione) . $this->formElementErrors($datacreazione) . $formLabel->closeTag(); ?>
+																</td>
+                            </tr>
 
-<form class="form-horizontal" action=" " method="post"  id="contact_form">
+                             <thead>
+                            <tr>
+                                <th class="schedalav">E-Mail</th>
+                                <th class="schedalav">Telefono</th>
+                                <th class="schedalav">Consegna</th>
+</tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+																	<?php
+																		 $mail = $form->get('mail');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($mail) . $this->formElementErrors($mail) . $formLabel->closeTag(); ?>
+                                <td>
+																	<?php
+																		 $telefono = $form->get('telefono');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($telefono) . $this->formElementErrors($telefono) . $formLabel->closeTag(); ?>
+                                <td>
+																	<?php
+																		 $oraconsegna = $form->get('oraconsegna');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($oraconsegna) . $this->formElementErrors($oraconsegna) . $formLabel->closeTag(); ?>
+                            </tr>
+                        </tbody>
+                             <thead>
+                            <tr>
+                                <th class="schedalav">Referente</th>
+                                <th colspan="2" class="schedalav">Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+																	<?php
+																		 $referente = $form->get('referente');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($referente) . $this->formElementErrors($referente) . $formLabel->closeTag(); ?>
+																	 </td>
+                                <td colspan="2">
+																	<?php
+																		 $note = $form->get('note');
+																		 echo $formLabel->openTag();
+																		 echo $this->formInput($note) . $this->formElementErrors($note) . $formLabel->closeTag(); ?>
+																	 </td>
+                            </tr>
+                    </table>
+				</div>
+            </div>
+		</div>
 
-<!-- Time-->
-
-<div class="form-group">
-  <?php
-      $datacreazione = $form->get('datacreazione');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Data di arrivo</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  <?php echo $this->formInput($datacreazione) . $this->formElementErrors($datacreazione) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-    <!-- Text input-->
-
-<div class="form-group">
-  <?php
-      $cliente = $form->get('cliente');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Azienda</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-    <?php echo $this->formInput($cliente) . $this->formElementErrors($cliente) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <?php
-      $lavoro = $form->get('lavoro');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Lavoro</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-<?php echo $this->formInput($lavoro) . $this->formElementErrors($lavoro) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-    <!-- Time-->
-
-<div class="form-group">
-  <?php
-      $dataconsegna = $form->get('dataconsegna');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Data di Consegna</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <?php echo $this->formInput($dataconsegna) . $this->formElementErrors($dataconsegna) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-
-
-
-<!-- Text input-->
-   <div class="form-group">
-     <?php
-       $mail = $form->get('mail');
-       echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">E-Mail</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-    <?php echo $this->formInput($mail) . $this->formElementErrors($mail) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-
-
-<!-- Text input-->
-
-<div class="form-group">
-  <?php
-    $referente = $form->get('referente');
-    echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label" >Referente</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-<?php echo $this->formInput($referente) . $this->formElementErrors($referente) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
- <!-- Text input-->
-
-
-<div class="form-group">
-  <?php
-    $telefono = $form->get('telefono');
-    echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Telefono</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-    <?php echo $this->formInput($telefono) . $this->formElementErrors($telefono) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <?php
-      $priorita = $form->get('priorita');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Priorità</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-bell"></i></span>
-              <?php echo $this->formInput($priorita) . $this->formElementErrors($priorita) . $formLabel->closeTag(); ?>
-
-</div>
-</div>
-</div>
-
-
-
-<!-- Text area -->
-
-<div class="form-group">
-  <?php
-      $note = $form->get('note');
-      echo $formLabel->openTag() ?>
-<label class="col-md-3 control-label">Note Lavoro</label>
-<div class="col-md-8 inputGroupContainer">
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        <?php echo $this->formInput($note) . $this->formElementErrors($note) . $formLabel->closeTag(); ?>
-</div>
-</div>
-</div>
-<hr>
-
-
-
-<!-- Button -->
-<div class="form-group">
-<label class="col-md-4 control-label"></label>
-<div class="col-md-4">
-<button type="submit" class="btn btn-warning" >SALVA <span class="glyphicon glyphicon-send"></span></button>
-</div>
-</div>
-</form>
-
-
-
-
-
-
-<?=$this->form()->closeTag($form);?>
-
-
-</div>
-
-</div> <!-- End List Main -->
-
-</div>
-<!--end container-->
+		<div class="tasti">
+			<div class="row">
+                <div class="col-xs-3">
+					  <button alt="Modifica" ><span class="glyphicon glyphicon-edit" href="<?=$this->url('todos/modifica', ['id' => $todo->getId()])?>" ></span></button>
+                      <button alt="Elimina"><span class="glyphicon glyphicon-remove" href="<?=$this->url('todos/elimina', ['id' => $todo->getId()])?>"> </span></button>
+				</div>
+            </div>
+                     <hr class="divisor">
+         </div>
+            <!-- End List Main -->

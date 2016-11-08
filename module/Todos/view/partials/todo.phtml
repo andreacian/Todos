@@ -4,6 +4,12 @@
   </td>
   <td><?=$todo->getLavoro()?></td>
   <td><?=date_format($todo->getDataconsegna(), 'd-m-Y')?></td>
-  <td><?=$todo->getPriorita()?></td>
-
+  <td><?=date_format ($todo->getOraconsegna(), 'h:m')?></td>
+  <td>
+  <!--<button hidden><span class="glyphicon glyphicon-pencil"></span> -->
+  <button><span class="glyphicon glyphicon-pencil"></span> 
+  </button>
+  <button><span class="glyphicon  glyphicon-remove"></span>
+  </button>
+</td>
 </tr>

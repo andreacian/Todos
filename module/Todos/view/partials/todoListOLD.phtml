@@ -1,0 +1,17 @@
+        <tr>
+            <td><?=date_format($todo->getDatacreazione(), 'd-m-Y')?></td>
+            <th scope="row">
+              <a href="<?= $this->url('todos/default', ['id' => $todo->getId()]) ?>"><?=$todo->getCliente() ?></a>
+            </th>
+            <td><?=$todo->getLavoro()?></td>
+            <td><?=date_format($todo->getDataconsegna(), 'd-m-Y')?></td>
+            <td><?=$todo->getMail()?></td>
+            <td><?=$todo->getTelefono()?></td>
+            <td><?=date_format($todo->getOraconsegna(), 'h:m')?></td>
+            <td><?=$todo->getReferente()?></td>
+            <td><?=$todo->getNote()?></td>
+            <td>
+                <a class="btn btn-default" href="<?=$this->url('todos/modifica', ['id' => $todo->getId()])?>" role="button">Modifica</a>
+                <a class="btn btn-default" href="<?=$this->url('todos/elimina', ['id' => $todo->getId()])?>" role="button">Elimina</a>
+            </td>
+        </tr>

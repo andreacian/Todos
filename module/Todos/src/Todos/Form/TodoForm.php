@@ -14,7 +14,7 @@ class TodoForm extends Form
 
         $this->add([
             'name'       => 'datacreazione',
-            'type'       => 'Zend\Form\Element\DateTime',
+            'type'       => 'Zend\Form\Element\Date',
             'options' => array(
                  'label' => 'Data creazione',
                  'format' => 'd-m-Y',
@@ -60,7 +60,7 @@ class TodoForm extends Form
 
         $this->add([
             'name'       => 'dataconsegna',
-            'type'       => 'Zend\Form\Element\DateTime',
+            'type'       => 'Zend\Form\Element\Date',
             'options' => array(
                  'label' => 'Data consegna',
                  'format' => 'd-m-Y',
@@ -105,20 +105,18 @@ class TodoForm extends Form
         ]);
 
         $this->add([
-            'name'       => 'priorita',
-            'type'       => 'Zend\Form\Element\Range',
+            'name'       => 'oraconsegna',
+            'type'       => 'Zend\Form\Element\Time',
             'options' => array(
-                 'label' => 'Priorità',
+                 'label' => 'Ora di consegna',
                  'label_attributes' => array(
                      'class' => 'control-label',
                  ),
             ),
             'attributes' => array(
-                'id'       => 'priorita',
+                'id'       => 'oraconsegna',
                 'class'    => 'form-control',
-                'min' => 0, // default minimum is 0
-                'max' => 100, // default maximum is 100
-                'step' => 1 // default interval is 1
+
             )
         ]);
 
@@ -161,7 +159,7 @@ class TodoForm extends Form
           $this->get('dataconsegna')->setValue($todo->getDataconsegna());
           $this->get('mail')->setValue($todo->getMail());
           $this->get('telefono')->setValue($todo->getTelefono());
-          $this->get('priorita')->setValue($todo->getPriorita());
+          $this->get('oraconsegna')->setValue($todo->getOraconsegna());
           $this->get('referente')->setValue($todo->getReferente());
           $this->get('note')->setValue($todo->getNote());
 

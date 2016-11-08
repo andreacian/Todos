@@ -39,7 +39,7 @@ class TodosService {
             $dati['dataconsegna'],
             $dati['mail'],
             $dati['telefono'],
-            $dati['priorita'],
+            $dati['oraconsegna'],
             $dati['referente'],
             $dati['note']
 
@@ -60,7 +60,7 @@ class TodosService {
           $todo->setDataconsegna($dati['dataconsegna']);
           $todo->setMail($dati['mail']);
           $todo->setTelefono($dati['telefono']);
-          $todo->setPriorita($dati['priorita']);
+          $todo->setOraconsegna($dati['oraconsegna']);
           $todo->setReferente($dati['referente']);
           $todo->setNote($dati['note']);
 

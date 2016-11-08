@@ -66,11 +66,11 @@ class Todo
     private $telefono;
 
     /**
-     * @var integer
+     * @var \DateTime
      *
-     * @ORM\Column(name="priorita", type="integer", nullable=false)
+     * @ORM\Column(name="oraconsegna", type="time", nullable=true)
      */
-    private $priorita;
+    private $oraconsegna;
 
     /**
      * @var string
@@ -94,7 +94,7 @@ class Todo
             $this->dataconsegna = $dataconsegna;
             $this->mail = $mail;
             $this->telefono = $telefono;
-            $this->priorita = $priorita;
+            $this->oraconsegna = $oraconsegna;
             $this->referente = $referente;
             $this->note = $note;
 
@@ -109,7 +109,7 @@ class Todo
           'dataconsegna' => $this->dataconsegna,
           'mail' => $this->mail,
           'telefono' => $this->telefono,
-          'priorita' => $this->priorita,
+          'oraconsegna' => $this->oraconsegna,
           'referente' => $this->referente,
           'note' => $this->note,
 
@@ -135,7 +135,8 @@ class Todo
      */
     public function setDatacreazione($datacreazione)
     {
-        $this->datacreazione = $datacreazione;
+//        $this->datacreazione = $datacreazione;
+          $this->datacreazione = new \DateTime($datacreazione);
 
         return $this;
     }
@@ -207,7 +208,8 @@ class Todo
      */
     public function setDataconsegna($dataconsegna)
     {
-        $this->dataconsegna = $dataconsegna;
+//        $this->dataconsegna = $dataconsegna;
+        $this->dataconsegna = new \DateTime($dataconsegna);
 
         return $this;
     }
@@ -271,27 +273,27 @@ class Todo
     }
 
     /**
-     * Set priorita
+     * Set oraconsegna
      *
-     * @param integer $priorita
+     * @param \DateTime $oraconsegna
      *
      * @return Todo
      */
-    public function setPriorita($priorita)
+    public function setOraconsegna($oraconsegna)
     {
-        $this->priorita = $priorita;
+        $this->oraconsegna = new \DateTime ($oraconsegna);
 
         return $this;
     }
 
     /**
-     * Get priorita
+     * Get oraconsegna
      *
-     * @return integer
+     * @return \DateTime
      */
-    public function getPriorita()
+    public function getOraconsegna()
     {
-        return $this->priorita;
+        return $this->oraconsegna;
     }
 
     /**

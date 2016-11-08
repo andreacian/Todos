@@ -13,39 +13,14 @@
                                      ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
                                      ->appendStylesheet($this->basePath('css/style.css'))
                                      ?>
-                                     <title>TO DO LIST - La Tipografica - PN</title>
+
     </head>
     <body>
-
-      <?=$this->partial('partials/header.phtml'); ?>
-
-      <div class="container">
-          <!--start container-->
-
-              	<div class="row">
-
-      			<div class="col-xs-12">
-                      <hr>
-                      <img src="img/LaTipografica_logo.png" alt="LTP" class="text-center">
-      				<h1 class="text-center">TO DO LIST</h1>
-                      <hr>
-      			</div>
-          </div>
-
-
+        <?=$this->partial('partials/header.phtml'); ?>
         <main>
             <?php echo $this->content; ?>
         </main>
-                 <hr>
-            </div>
-              <!--end container-->
-              <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-              <script src="js/jquery.js"></script>
-
     </body>
-
-
     <!-- scripts -->
     <?php echo $this->inlineScript()->prependFile($this->basePath('/js/bootstrap.min.js'))
                                     ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') ?>
